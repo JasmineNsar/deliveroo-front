@@ -65,15 +65,22 @@ function App() {
                             // console.log(meal.picture);
                             return (
                               <div
-                                key={index}
                                 className="item"
+                                key={index}
                                 onClick={() => {
                                   // console.log(meal);
+
+                                  // ⬇︎ je crée une copie
                                   const newBasket = [...basket];
+
+                                  // Conditions meal déja dans le basket
+                                  // {newBasket[i].id === meal.id ? mealBasket.quantity++ }
+
                                   // ⬇︎ ajouter une clé quantity dans mon obj meal
                                   meal.quantity = 1;
-
+                                  // ⬇︎ je modifie la copie
                                   newBasket.push(meal);
+                                  // ⬇︎ j'enregistre la copie
                                   setBasket(newBasket);
                                 }}
                               >
